@@ -1,0 +1,57 @@
+# This is just an example configuration - please configure this in your own app.yml!
+all:
+  a:
+    slot_variants:
+      adHTMLWrapper:
+        normal:
+          # give your slot variant a descriptive name that's shown 
+          # in the slot variant menu or in the "Add Content" menu, 
+          # depending on whether there's only one slot variant 
+          # allowed for the slot
+          label:            Normal
+        wrap_in_paragraphs:
+          label:            Wrap text in paragraphs
+          options:
+            # the wrap option just wraps a simple text (aTextSlot) in HTML code, 
+            # great for headings that need a bit more like: 
+            #   <h1 class="some_class" onClick="return false;">[[TEXT]]</h1>
+            # - this is currently not an easy thing to do in Apostrophe out-of-the-box, 
+            # especially in an area, forcing you to create custom slot types en masse
+            wrap:           '<p>[[TEXT]]</p>'
+        divider:
+          label:            Divider
+          options:
+            # the saveOnCreation option is awesome for when your slot doesn't even need input -
+            # this works great for interleaving slots in an area with some pre-defined HTML 
+            # like horizontal rulers and such - again, impossible to do with Apostrophe right now
+            saveOnCreation: true
+            # the showEditButton option goes great with the saveOnCreation option because if there's 
+            # no input required why even bother with showing the "Edit" button at all?
+            showEditButton: false
+            # the content option is for short snippets of HTML code and because this is configured 
+            # in the app.yml file and so all your short snippets for a project are in one place
+            content:        '<hr class="divider" style="border:2px solid #F00;" />'
+        product:
+          label:            Product
+          options:
+            saveOnCreation: true
+            showEditButton: false
+            # the itemTemplate option defines the partial in the adHTMLWrapperSlot module to render -
+            # in there you can even nest regular Apostrophe slots and even areas, giving you a powerful 
+            # and easy way to group slots and areas together, think of a product in a e-commerce shop:
+            #   - product title (aTextSlot)
+            #   - product description (an area (!) with aTextSlot and aRichTextSlot as allowed slots)
+            #   - product picture (aImageSlot) or pictures (aSlideshowSlot)
+            #   - and to round things off: an area at the end with only aTextSlots and aRichTextSlots allowed 
+            #     to satisfy even the most demanding requirements while staying true to The Apostrophe Way(tm) of content management! :)
+            #
+            # A sample of this can be found in the plugin's adHTMLWrapperSlot module's template/_product.php partial
+            itemTemplate:   product
+    
+    #allowed_slot_variants:
+    #  adHTMLWrapper:
+    #    - normal
+    #    - wrap_in_paragraphs
+    #    - sidebar_quote
+    #    - small_divider
+    #    - big_divider
