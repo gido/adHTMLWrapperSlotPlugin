@@ -72,7 +72,7 @@ The adHTMLWrapperSlotPlugin is now ready to be used.
 ## Usage
 
 Let's take an example to explain what this plugin does: you are tasked with creating an e-commerce site with Apostrophe. 
-After finishing the site you need to explain to the user how to create a product. A product consists of a title, a description, 
+After finishing the site you need to explain to the client how to create a product. A product consists of a title, a description, 
 a few pictures and yet more text.
 
 You probably know that you can't encapsulate this product slot and nest all those Apostrophe slots inside, complete with wrapping divs 
@@ -99,7 +99,6 @@ Because the product is only a template it doesn't need any user input; so we jus
 You'll then need to create this `_product.php` partial in the `apps/frontend/modules/adHTMLWrapperSlot/templates` directory you created earlier. 
 The plugin ships with an example of how this partial could look like, you can find it inside the plugin's modules directory in `modules/adHTMLWrapperSlot/templates/_product.php`:
 
-    [code]
     <div class="dm_product clearfix">
       <div class="dm_product_picture">
         <?php a_slot("picture-$pageid-$name-$permid", 'aImage', array(
