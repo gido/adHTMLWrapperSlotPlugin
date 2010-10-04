@@ -42,6 +42,20 @@ We're done installing the plugin files.  Now, change back to your symfony projec
 
     $ cd ..
 
+Activate the plugin in the `config/ProjectConfiguration.class.php`:
+
+    class ProjectConfiguration extends sfProjectConfiguration
+    {
+      public function setup()
+      {
+        $this->enablePlugins(array(
+          'sfDoctrinePlugin', 
+          'adHTMLWrapperSlotPlugin',
+          '...'
+        ));
+      }
+    }
+
 Next, you have to enable the `adHTMLWrapperSlot` module in your application's `settings.yml` file.  If the name of your application is, for example, `frontend`, then open `apps/frontend/config/settings.yml`, find the `enabled_modules` parameter, and add `adHTMLWrapperSlot` to the list.
 
 Next, rebuild the model:
