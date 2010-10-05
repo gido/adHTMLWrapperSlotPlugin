@@ -28,11 +28,7 @@ class adHTMLWrapperSlotComponents extends BaseaSlotComponents
     
     $this->values = $this->slot->getArrayValue();
     
-    if (!empty($this->values['text']))
-    {
-    	$this->itemTemplate = $this->getOption('itemTemplate', false);
-    }
-    
+    $this->itemTemplate = $this->getOption('itemTemplate', false);
     $this->content = $this->getOption('content', false);
     $this->showEditButton = $this->getOption('showEditButton', true);
     $this->wrap = $this->getOption('wrap', '[[TEXT]]');
