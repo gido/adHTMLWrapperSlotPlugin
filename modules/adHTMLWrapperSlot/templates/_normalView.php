@@ -2,7 +2,7 @@
 <?php include_partial('a/simpleEditWithVariants', array('name' => $name, 'permid' => $permid, 'pageid' => $pageid, 'slot' => $slot, 'showEditButton' => $showEditButton)) ?>
 <?php if ($content !== false): ?>
   <?php echo $content ?>
-<?php elseif (!array_key_exists('text', $values) || !strlen($value)): ?>
+<?php elseif ((!array_key_exists('text', $values) || !strlen($value)) && (!isset($options['optional']) || !$options['optional'])): ?>
   <?php if ($editable): ?>
     <?php echo __($emptyLabel, null, 'apostrophe') ?>
   <?php else: ?>
