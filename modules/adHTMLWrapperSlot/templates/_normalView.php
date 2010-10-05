@@ -8,7 +8,7 @@
   <?php else: ?>
     <?php echo __('Please switch into edit mode to add content to this slot.', null, 'apostrophe') ?>
   <?php endif ?>
-<?php elseif (array_key_exists('text', $values) && strlen($values['text']) > 0): ?>
+<?php elseif ((array_key_exists('text', $values) && strlen($values['text']) > 0) || (isset($options['optional']) && $options['optional'])): ?>
   <?php if (false !== $itemTemplate): ?>
     <?php echo str_replace('[[TEXT]]', get_partial('adHTMLWrapperSlot/'.$itemTemplate, array('text' => $values['text'], 'name' => $name, 'permid' => $permid, 'pageid' => $pageid, 'slot' => $slot)), $wrap) ?>
   <?php else: ?>
