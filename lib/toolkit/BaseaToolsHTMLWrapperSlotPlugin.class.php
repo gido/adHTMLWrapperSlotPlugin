@@ -10,11 +10,12 @@ class BaseaToolsHTMLWrapperSlotPlugin extends BaseaTools
          'aText' => 'Plain Text',
          'aRichText' => 'Rich Text',
          'aFeed' => 'RSS Feed',
-         'aImage' => 'Image',
-         'aSlideshow' => 'Slideshow',
+         'aSlideshow' => 'Photo Slideshow',
+         'aSmartSlideshow' => 'Smart Slideshow',
          'aButton' => 'Button',
+         'aAudio' => 'Audio',
          'aVideo' => 'Video',
-         'aPDF' => 'PDF',
+         'aFile' => 'File',
          'aRawHTML' => 'Raw HTML'),
       sfConfig::get('app_a_slot_types', array()));
     if (isset($options['allowed_types']))
