@@ -19,7 +19,7 @@
 <?php endif ?>
 
 <?php if (!isset($showEditButton) || $showEditButton): ?>
-  <?php include_partial('a/simpleEditButton', array('pageid' => $pageid, 'name' => $name, 'permid' => $permid, 'controlsSlot' => false)) ?>
+  <?php include_partial('a/simpleEditButton', array('title' => $title, 'label' => $label, 'pageid' => $pageid, 'slot' => $slot, 'name' => $name, 'permid' => $permid, 'controlsSlot' => false)) ?>
 <?php endif ?>
 
 <?php include_partial('a/variant', array('pageid' => $pageid, 'name' => $name, 'permid' => $permid, 'slot' => $slot)) ?>
